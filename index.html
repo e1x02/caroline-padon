@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caroline Padon</title>
+<style>
+@font-face {
+	font-family: "Commit";
+	src: url("commitmono-padon.woff2");
+}
+:root {
+scroll-behavior: smooth;
+}
+body{
+color: rgb(0, 118, 24);
+background: rgb(250 255 251);
+font-size: large;
+margin: 8px;
+}
+h1,h2,h3{
+font-size: inherit;
+font-weight: inherit;
+}
+
+.table{
+margin-left: 50vw;
+display: flex;
+flex-direction: column;
+justify-content: start;
+
+  & table{
+    scroll-margin-top: 12px;
+  }
+}
+.float{
+float:right
+}
+table{
+width: 100%;
+border-collapse: collapse;
+margin: 16px 0;
+}
+
+th,td{
+font-weight: inherit;
+text-align: left;
+border: solid 1px;
+padding: 4px;
+  & a{
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  }
+}
+tr.info td, td.info{
+font-family: "Commit",monospace;
+font-size: 70%;
+padding: 1px 4px;
+text-transform: uppercase;
+}
+#work,#talks{
+ & tr:has(a){
+  transition: 0.3s;
+  transition-property: background-color;
+ }
+ & tr:has(a):hover{
+  background-color:rgb(233 244 234);
+ }
+}
+
+
+.image{
+background-color: rgb(230 235 230);
+background-image: url(grain.png);
+background-size: 64px;
+border-radius: 8px;
+margin:0;
+position: fixed;
+top:8px;bottom:8px;left:8px;right:calc(50vw + 8px);
+display: flex;
+align-items: safe center ;
+justify-content: center;
+  & #pegboard{
+    font-family: "Commit", monospace;
+    background-color: rgb(237 242 238);
+    background-image: url(peg.svg);
+    background-size: 4%;
+    background-repeat: space;
+    aspect-ratio: auto;
+    max-height: 608px;
+    max-width: 400px;
+    box-shadow: 0px 3px 5px rgba(3, 7, 18, 0.20),
+                0px 12px 20px rgba(3, 7, 18, 0.10);
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    gap: 8px;
+    border: rgb(237 242 238) solid 6px;
+    margin: 16px;
+    & a{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      position: relative;
+    }
+    a::after{
+      text-transform: uppercase;
+      text-shadow: 0px 0px 6px white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      border: 2px solid rgb(255,255,255);
+      background-color: rgba(255,255,255,0.4);
+      box-shadow: 0px 0px 3px rgba(3, 7, 18, 0.3);
+      color: rgb(7 88 19);
+      position: absolute;
+      top:0;bottom:0;right:0;left:0;
+      z-index: 10;
+      transition: 0.5s;
+      opacity: 0;
+    }
+    a:hover::after{
+      opacity: 1;
+    }
+    #pot{
+    grid-column: 6 / 11;
+    grid-row: 4 / 13;
+    }
+    #pot::after{
+    content: "Work";
+    }
+    #walkman{
+    grid-column: 1 / 8;
+    grid-row: 1 / 8;
+    }
+    #walkman::after{
+    content: "Talks";
+    }
+    #photo{
+    grid-column: 1 / 7;
+    grid-row: 10 / 17;
+    }
+    #photo::after{
+    content: "About";
+    }
+    & a img{
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .image{
+  position: static;
+    & #pegboard{
+      max-height: 304px;
+      max-width: 200px;
+    }
+  }
+  .table{
+  margin: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="image">
+  <div id="pegboard">
+    <a id="pot" href="#work"><img src="pot.png" alt=""></a>
+    <a id="walkman" href="#talks"><img src="walkman.png" alt=""></a>
+    <a id="photo" href="#about"><img src="frame.png" alt=""></a>
+  </div>
+</div>
+
+<div class="table">
+
+<header>
+<h1 id="name">Caroline Padon</h1>
+</header>
+
+<table id="about">
+  <thead>
+    <tr>
+      <th colspan="3">About</th>
+    </tr>
+      <tr class="info">
+      <td>Type</td>
+      <td>Info</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">education:</td>
+      <td>Masters of Information Science&nbsp;<span class="float">UT Austin</span></td>
+    </tr>
+      <tr>
+        <td>Bachelor of Fine Art&nbsp;<span class="float">UT Austin</span></td>
+      </tr>
+    <tr>
+      <td>location: </td>
+      <td>Austin, TX</td>
+    </tr>
+    <tr>
+      <td>bio: </td>
+      <td colspan="2">I'm a UX designer and librarian and I do some printmaking and papermaking on the side.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table id="work">
+  <thead>
+    <tr>
+      <th colspan="2">Work</th>
+    </tr>
+    <tr class="info">
+      <td>Project Name</td>
+      <td>Date</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="skillswap">Skillswap</a></td>
+      <td><a href="skillswap">2025</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://example.com">Example Work 1</a></td>
+      <td><a href="https://example.com">2024</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://example.com">Example Work 2</a></td>
+      <td><a href="https://example.com">2024</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<table id="talks">
+  <thead>
+    <tr>
+      <th colspan="3">Talks</th>
+    </tr>
+    <tr class="info">
+      <td>Title</td>
+      <td>Place</td>
+      <td>Date</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://example.com">Talk 1</a></td>
+      <td><a href="https://example.com">Place</a></td>
+      <td><a href="https://example.com">2024</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://example.com">Talk 2</a></td>
+      <td><a href="https://example.com">Place</a></td>
+      <td><a href="https://example.com">2024</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://example.com">Talk 3</a></td>
+      <td><a href="https://example.com">Place</a></td>
+      <td><a href="https://example.com">2024</a></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+
+<script>
+let tableSide = document.querySelector(".table");
+let table = document.querySelector(".table > table:last-child");
+console.log(table.scrollHeight)
+
+tableSide.style.height = (window.innerHeight - 34) + (tableSide.scrollHeight - table.scrollHeight) + "px"
+
+</script>
+</body>
+</html>
